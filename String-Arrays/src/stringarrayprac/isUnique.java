@@ -1,6 +1,6 @@
 package stringarrayprac;
 
-public class ex1 {
+public class isUnique {
 	
 	/*
 	Is Unique: Implement an algorithm to determine 
@@ -21,7 +21,7 @@ public class ex1 {
 	 * 	Space: O(1)
 	 * 
 	 */
-	public static boolean isUnique(String str) {
+	public static boolean isUniqueDS(String str) {
 		if (str.length() > 128) return false;
 		
 		boolean[] arr = new boolean[128]; // 128 char alphabet
@@ -66,10 +66,10 @@ public class ex1 {
 	
 	public static void main(String args[]) {
 		
-		System.out.println(isUnique("Hello"));
+		System.out.println(isUniqueDS("Hello"));
 		System.out.println(isUniqueNoDS("Hello"));		
 		System.out.println(isUniqueNoDS("abcde-"));		
-		System.out.println(isUnique("abcde-"));		
+		System.out.println(isUniqueDS("abcde-"));		
 		
 	}
 }
