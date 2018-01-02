@@ -1,7 +1,5 @@
 package stringarrayprac;
-
 import java.util.HashMap;
-
 public class IsPalindrome {
 
 	/*
@@ -19,7 +17,6 @@ public class IsPalindrome {
 	 */
 	
 	
-	
 	/* Check if a string is a palindrome. 
 	 * This method checks to see if there is
 	 * and even number of all characters except
@@ -27,17 +24,20 @@ public class IsPalindrome {
 	 * 
 	 * Complexity: O(2n) is O(n) 
 	 * 
-	 *	This is my solution. The solution in CTCI
-	 *	has a different approach.
 	 */
 	public static boolean isPalindrome(String str) {
 		boolean oneOdd = false;
-		
 		HashMap<Character, Integer> Hm = new HashMap<Character, Integer>();
 		for (int i = 0; i < str.length(); i++) {
 			char charVal = str.charAt(i);
-			
 			if (charVal != ' ') {
+				
+				/* If letter not already in hashmap
+				 * add it, and if it is then make its
+				 * value increase by one. Then you can loop
+				 * through the values and make sure
+				 * there is only one odd
+				 */
 				if (!Hm.containsKey(str.charAt(i))){
 					Hm.put(str.charAt(i), 1);
 					
@@ -48,7 +48,6 @@ public class IsPalindrome {
 				}
 			}
 		}
-		
 		for (Integer i : Hm.values()) {
 			if (i % 2 == 1 && oneOdd == false) {
 				oneOdd = true;
@@ -56,12 +55,6 @@ public class IsPalindrome {
 				return false;
 			}
 		}
-
 		return true;
-	}
-	
-	
-	public static void main(String args[]) {
-		System.out.println(isPalindrome("taco cat"));
 	}
 }

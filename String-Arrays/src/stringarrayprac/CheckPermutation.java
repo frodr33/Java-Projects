@@ -8,17 +8,7 @@ public class CheckPermutation {
 	Check Permutation: Given two strings,
 	write a method to decide if one is a 
 	permutation of the other
-	
-	NOTE: This can easily be done 
-	with HashSet, think of something
-	else though
-	
-	NOTE: Brute force, 3 for loops, 
-	not nested
 	*/
-	
-	
-	
 	
 	/* Method 1:
 	 *  Sort the string by first converting 

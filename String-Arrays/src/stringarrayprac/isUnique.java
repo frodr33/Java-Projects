@@ -1,5 +1,7 @@
 package stringarrayprac;
 
+import java.util.HashSet;
+
 public class isUnique {
 	
 	/*
@@ -22,8 +24,7 @@ public class isUnique {
 	 * 
 	 */
 	public static boolean isUniqueDS(String str) {
-		if (str.length() > 128) return false;
-		
+		if (str.length() > 128) return false;	
 		boolean[] arr = new boolean[128]; // 128 char alphabet
 		for (int i = 0; i < str.length(); i++) {
 			int val = str.charAt(i);
@@ -59,17 +60,38 @@ public class isUnique {
 				}
 			}
 		}
+		return true;
+	}
+	
+	
+	/* Third Solution: HashSet
+	 * 	Time: O(n)
+	 *  Space: O(n)
+	 */
+	public static boolean isUniqueHash(String str) {
 		
+		HashSet<Character> HS = new HashSet<Character>();
+		for (int i = 0; i < str.length(); i++) {
+			if (HS.contains(str.charAt(i))) {
+				return false;
+			} else {
+				HS.add(str.charAt(i));
+			}
+		}
 		
 		return true;
 	}
 	
-	public static void main(String args[]) {
-		
+	public static void main(String args[]) {	
 		System.out.println(isUniqueDS("Hello"));
 		System.out.println(isUniqueNoDS("Hello"));		
 		System.out.println(isUniqueNoDS("abcde-"));		
-		System.out.println(isUniqueDS("abcde-"));		
+		System.out.println(isUniqueDS("abcde-"));	
 		
+		System.out.println(isUniqueHash("Hello"));
+		System.out.println(isUniqueHash("Hello"));		
+		System.out.println(isUniqueHash("abcde-"));		
+		System.out.println(isUniqueHash("abcde-"));
 	}
+	
 }
