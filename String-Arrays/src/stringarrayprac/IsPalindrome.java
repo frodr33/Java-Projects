@@ -51,10 +51,20 @@ public class IsPalindrome {
 		for (Integer i : Hm.values()) {
 			if (i % 2 == 1 && oneOdd == false) {
 				oneOdd = true;
+				if (Hm.get(str.charAt(str.length()/2 + 1)) 
+						!= i) {
+					return false;
+					
+				}
 			} else if (i % 2 == 1) {
 				return false;
 			}
 		}
 		return true;
+	}
+	
+	
+	public static void main(String[] args) {
+		System.out.println(isPalindrome("HeellH"));
 	}
 }
